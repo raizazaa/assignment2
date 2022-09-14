@@ -19,16 +19,15 @@ It is not mandatory to use python's virtual environment (venv) module. But it is
 
 #### Create a function on views.py that can do querying into models and returns the data into a HTML.
 
-    Import the item from class models. Then, create a function that take the item and some other variables as context. That return them along with the defined HTML file using the render function from django's module.
+..Import the item from class models. Then, create a function that take the item and some other variables as context. That return them along with the defined HTML file using the render function from django's module.
 
 #### Create a routing to map the function that you've created in views.py.
 
-    On **urls.py** use the function from **views.py** for routing the context to the defined HTML file.
+..On **urls.py** use the function from **views.py** for routing the context to the defined HTML file.
 
 #### Map the data that has been returned into HTML by using Django syntax for templates and data mapping.
 
-    Use the for loop to iterate all the items from the database. And present it via table.
+..Use the for loop to iterate all the items from the database. And present it via table.
 
 #### Deploy your assignment into Heroku so that your friends and your teaching assistants can access it via the Internet.
-
-    Make the application on Heroku and conect it with the repository. Then make repository secret with the appropriate application name and API. Now it can be [accessed](https://raaassignment2.herokuapp.com/katalog/).
+..Make the application on Heroku and conect it with the repository. Then make repository secret with the appropriate application name and API. Now it can be [accessed](https://raaassignment2.herokuapp.com/katalog/).
