@@ -8,11 +8,11 @@
 ![Django Diagram](https://krify.co/wp-content/uploads/2019/06/Django-Work-flow.jpg)
 <sub>taken from the [PBD 22 repository](https://pbp-fasilkom-ui.github.io/ganjil-2023/en/assignments/tutorial/tutorial-1)</sub>
 
-From the diagram, when a user request to Django, firstly it will be processed through **urls.py** then to **views.py**. If there exist a database, then **views.py** will take all of the query(in json file) to **models.py**. The result will be mapped into **katalog.html** before the user gets **katalog.html** as the response.
+    From the diagram, when a user request to Django, firstly it will be processed through **urls.py** then to **views.py**. If there exist a database, then **views.py** will take all of the query(in json file) to **models.py**. The result will be mapped into **katalog.html** before the user gets **katalog.html** as the response.
 
 ## Virtual environment
 
-It is not mandatory to use python's virtual environment (venv) module. But it is best practice to use it. A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments. Thus, isolating the project as to not be tangled with other existing projects.
+    It is not mandatory to use python's virtual environment (venv) module. But it is best practice to use it. A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments. Thus, isolating the project as to not be tangled with other existing projects.
 
 
 ## Way to implement things
