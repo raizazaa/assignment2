@@ -1,7 +1,7 @@
 [
     {
         "model": "katalog.catalogitem",
-        "pk": 1,
+        "pk":1,
         "fields": {
             "item_name": "iPhone 12 Pro Max",
             "item_price": 17999999,
