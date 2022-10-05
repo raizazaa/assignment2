@@ -1,34 +1,34 @@
-# PBP Assignment 2: Introduction to Django and Models View Template (MVT) Concept
+# PBP Assignment 5: Web Design Using HTML, CSS, and CSS Framework
 
-[Project Template](https://github.com/pbp-fasilkom-ui/assignment-repository)<br/>
-[Heroku Application](https://raaassignment2.herokuapp.com/katalog/)
+[Heroku Application](https://raaassignment2.herokuapp.com/todolist/)
 
-## Django diagram
+## What is the difference between Inline, Internal, and External CSS? What are the advantages and disadvantages of each style?
 
-![Django Diagram](https://krify.co/wp-content/uploads/2019/06/Django-Work-flow.jpg)
-<sub>taken from the [PBD 22 repository](https://pbp-fasilkom-ui.github.io/ganjil-2023/en/assignments/tutorial/tutorial-1)</sub>
+Inline: Class style css that only applies to one HTML tag. It's recommended if you want to differentiate one tag from the other, but it's not optimal if the project is big and styling the tags one by one.
+</br>
+Internal: Class style css that applies to one HTML page. It is used if you want to style one whole page and you don't need to upload more css files as it is in the HTML file itself. But, changes only applies to one page, not good if you want to apply css to multiple HTML files.
+</br>
+External: Class style css that uses external .css file. Advantages are that the HTML file is smaller, loading speed is much faster compared to the other methods, and you can use the same css rule to multiple HTML files. Though it will take time before the page be perfect because it need to call the css file.
 
-From the diagram, when a user request to Django, firstly it will be processed through **urls.py** then to **views.py**. If there exist a database, then **views.py** will take all of the query(in json file) to **models.py**. The result will be mapped into **katalog.html** before the user gets **katalog.html** as the response.
+## Describe the HTML5 tags that you know.
+<ul>
+  <li>h$: multiple header tags</li>
+  <li>button: use to create button</li>
+  <li>table: use to create table</li>
+  <li>body: defines the page's body</li>
+  <li>br: single line break</li>
+  <li>img: represent an image</li>
+</ul>
 
-## Virtual environment
+## Describe the types of CSS selectors you know.
+<ul>
+  <li>Simple selectors (select elements based on name, id, class)</li>
+  <li>Combinator selectors (select elements based on a specific relationship between them)</li>
+  <li>Pseudo-class selectors (select elements based on a certain state)</li>
+  <li>Pseudo-elements selectors (select and style a part of an element)</li>
+  <li>Attribute selectors (select elements based on an attribute or attribute value)</li>
+</ul>
+source: https://www.w3schools.com/css/css_selectors.asp
 
-It is not mandatory to use python's virtual environment (venv) module. But it is best practice to use it. A virtual environment is a Python environment such that the Python interpreter, libraries and scripts installed into it are isolated from those installed in other virtual environments. Thus, isolating the project as to not be tangled with other existing projects.
-
-
-## Way to implement things
-
-#### Create a function on views.py that can do querying into models and returns the data into a HTML.
-
-> Import the item from class models. Then, create a function that take the item and some other variables as context. That return them along with the defined HTML file using the render function from django's module.
-
-#### Create a routing to map the function that you've created in views.py.
-
-> On **urls.py** use the function from **views.py** for routing the context to the defined HTML file.
-
-#### Map the data that has been returned into HTML by using Django syntax for templates and data mapping.
-
-> Use the for loop to iterate all the items from the database. And present it via table.
-
-#### Deploy your assignment into Heroku so that your friends and your teaching assistants can access it via the Internet.
-
-> Make the application on Heroku and conect it with the repository. Then make repository secret with the appropriate application name and API. Now it can be [accessed](https://raaassignment2.herokuapp.com/katalog/).
+## Explain how you would implement the checklist above.
+First, I added lines to the base.html in the root templates to include Bootstrap’s CSS and JS. Then, I tried to customize the HTML page by external CSS with style.css in the static/css folder (such as changing background colors, alignment, and the likes). I changed the table format into card format by using the tag card and container. To make it responsive, I made div classes for row and column and @media in the css file. I used [this site](https://www.w3schools.com/HOWTO/howto_css_column_cards.asp) as guidance.

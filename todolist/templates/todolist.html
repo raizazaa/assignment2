@@ -2,31 +2,29 @@
 
  {% block content %}
 
-  <h1>Assignment 4 PBP/PBD</h1>
+  <h1>Assignment PBP/PBD</h1>
 
   <h5>username: </h5>
   <p>{{username}}</p>
 
-  <table>
-    <tr>
-      <th>Creation Date</th>
-      <th>Task</th>
-      <th>Description</th>
-
-    </tr>
-
-    {% for task in todolist_task %}
-      <tr>
-        <th>{{task.task_date}}</th>
-        <th>{{task.task_title}}</th>
-        <th>{{task.task_desc}}</th>
-      </tr>
-    {% endfor %}
-  </table>
-
+  <div class="row">
+  {% for task in todolist_task %}
+      <div class="column">
+        <div class="card" style="max-width: 18rem;">
+          <h2>{{task.task_title}}</h2>
+          <div class="container">
+            <h4 class="card-text">{{task.task_desc}}</h4>
+            <p class="card-text">Added: {{task.task_date}}</small></p>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+  </div>
+  <p></p>
   <h5>Last Login: {{ last_login }}</h5>
-
-  <button><a href="{% url 'todolist:create_task' %}">Add New Task</a></button>
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-
+  <p></p>
+  <div class="text-center">
+    <a href="{% url 'todolist:create_task' %}" class="btn btn-secondary">Add New Task</a>
+    <a href="{% url 'todolist:logout' %}" class="btn btn-secondary">Logout</a>
+  </div>
  {% endblock content %}
