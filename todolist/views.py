@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.http import HttpResponse
+from django.core import serializers
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
@@ -70,3 +72,22 @@ def create_task(request):
     
     context = {'form':form}
     return render(request, 'create-task.html', context)
+
+def get_json(request):
+    data_todolist_task = TaskToDoList.objects.filter(task_user=request.user)
+    return HttpResponse(serializers.serialize("json", data_todolist_task))
+
+def add(request):
+    form = TaskForm()
+
+    if request.method == "POST":
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            task = form.save(commit=False)
+            task.task_user = request.user
+            task.save()
+
+            return HttpResponseRedirect(reverse('todolist:show_todolist'))
+    
+    context = {'form':form}
+    return render(request, "todolist.html", context)
